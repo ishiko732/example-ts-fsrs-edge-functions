@@ -9,13 +9,13 @@
     "lint": "eslint ./"
   },
   "dependencies": {
-    "@vercel/node": "^3.2.24",
     "dayjs": "^1.11.13",
     "ts-fsrs": "^4.4.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
     "@types/node": "^20.17.6",
+    "@vercel/node": "^3.2.24",
     "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.12.0",
