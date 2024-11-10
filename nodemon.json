@@ -1,0 +1,10 @@
+{
+  "watch": [
+    "./api"
+  ],
+  "ext": "ts",
+  "ignore": [
+    "api/**/*.spec.ts"
+  ],
+  "exec": "vercel dev"
+}

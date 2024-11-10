@@ -1,0 +1,6 @@
+{
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.rulers": [80, 120],
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}
