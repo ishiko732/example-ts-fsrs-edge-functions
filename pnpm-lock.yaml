@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@vercel/node':
-        specifier: ^3.2.24
-        version: 3.2.24
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13
@@ -24,6 +21,9 @@ importers:
       '@types/node':
         specifier: ^20.17.6
         version: 20.17.6
+      '@vercel/node':
+        specifier: ^3.2.24
+        version: 3.2.24
       eslint:
         specifier: ^9.14.0
         version: 9.14.0
