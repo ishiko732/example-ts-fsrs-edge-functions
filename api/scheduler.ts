@@ -1,4 +1,10 @@
-import { fsrs, Grade, TypeConvert } from 'ts-fsrs'
+import {
+  fsrs,
+  GenSeedStrategyWithCardId,
+  Grade,
+  StrategyMode,
+  TypeConvert
+} from 'ts-fsrs'
 import { getHeader, getParams, getBody, NAN, CURRENT_TIMEZONE } from './_common'
 import { TBody, TCard, TRecordLog, TRecordLogItem } from './types'
 import { cardHandler, recordHandler, recordItemHandler } from './_handlers'
@@ -84,7 +90,8 @@ export async function PUT(request: Request) {
 
   // rollback
   const { card, log } = item
-  const f = fsrs(params)
+  const seedStrategyWithCardId = GenSeedStrategyWithCardId('card_id')
+  const f = fsrs(params).useStrategy(StrategyMode.SEED, seedStrategyWithCardId)
 
   const handler = cardHandler.bind(null, card_id, timezone)
   const rollbackItem = f.rollback(card, log, handler)

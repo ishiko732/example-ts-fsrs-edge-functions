@@ -1,4 +1,4 @@
-import { fsrs } from 'ts-fsrs'
+import { fsrs, GenSeedStrategyWithCardId, StrategyMode } from 'ts-fsrs'
 import { getHeader, CURRENT_TIMEZONE, getParams, NAN, getBody } from './_common'
 import { recordItemHandler } from './_handlers'
 import { TBody, TRescheduler } from './types'
@@ -38,7 +38,8 @@ export async function POST(request: Request) {
   console.debug('memory_state', memory_state)
 
   // reschedule the card
-  const f = fsrs(params)
+  const seedStrategyWithCardId = GenSeedStrategyWithCardId('card_id')
+  const f = fsrs(params).useStrategy(StrategyMode.SEED, seedStrategyWithCardId)
   const { current_card, first_card, history } = data
 
   const handler = recordItemHandler.bind(null, card_id, timezone)
